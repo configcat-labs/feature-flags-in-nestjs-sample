@@ -2,11 +2,11 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getSingleRandomAnimal(): string {
-    return 'get Random Animal';
+  getSingleAnimal(): string {
+    return 'Cow';
   }
-  getMultipleRandomAnimals(): string {
-    return 'get A Set Of Random Animals';
+  getMultipleAnimals(): string {
+    return 'Cow, Monkey, Dog';
   }
   notAvailable(): string {
     return 'Not Available!';

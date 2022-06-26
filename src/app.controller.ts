@@ -5,7 +5,7 @@ import { IConfigCatClient } from 'configcat-common';
 // Import the ConfigCat JavaScript SSR client SDK we've installed
 import * as configcat from "configcat-js-ssr";
 
-@Controller('random-animals')
+@Controller('animals')
 export class AppController {
   constructor(
     private readonly appService: AppService,
@@ -16,20 +16,20 @@ export class AppController {
     }
     
     @Get('single')
-    getSingleRandomAnimal(): string {
-      return this.appService.getSingleRandomAnimal();
+    getSingleAnimal(): string {
+      return this.appService.getSingleAnimal();
     }
     
     @Get('multiple')
-    async getMultipleRandomAnimalS(): Promise<string> {
+    async getMultipleAnimalS(): Promise<string> {
 
     // Create a variable to store the state of the feature flag from ConfigCat.
     // This variable will be automatically updated every 60 seconds by default.
-    const canShowRandomAnimals = await this.configCatClient.getValueAsync("canshowmultiplerandomanimals", false)
-    
-    if (canShowRandomAnimals) {
+    const canShowMultipleAnimals = await this.configCatClient.getValueAsync("canshowmultipleanimals", false)
+
+    if (canShowMultipleAnimals) {
         // If the Feature Flag is on, return the set of random animals.
-        return this.appService.getMultipleRandomAnimals();
+        return this.appService.getMultipleAnimals();
       } else {
         // If the Feature Flag is off, return not available.
         return this.appService.notAvailable();
