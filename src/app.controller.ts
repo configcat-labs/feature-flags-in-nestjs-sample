@@ -1,8 +1,8 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import { IConfigCatClient } from 'configcat-common';
 
-// Import the ConfigCat JavaScript SSR client SDK we've installed
+// Import ConfigCat
+import { IConfigCatClient } from 'configcat-common';
 import * as configcat from "configcat-js-ssr";
 
 @Controller('animals')
