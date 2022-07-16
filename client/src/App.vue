@@ -1,26 +1,28 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// Imports
+
+import SiteLayout from './views/layout/SiteLayout.vue';
 
 export default {
-  name: 'App',
+  data() {
+    return {
+      navigationItems: [
+        {
+          path: '/',
+          label: 'Home'
+        }
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    SiteLayout,
   }
 }
+
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<template>
+  <SiteLayout :navigationItems="navigationItems">
+    <router-view></router-view>
+  </SiteLayout>
+</template>
