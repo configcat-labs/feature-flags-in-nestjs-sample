@@ -1,7 +1,7 @@
 <script>
 // Imports
 import AppBanner from '@/components/AppBanner.vue'
-import GasMilageCalculator from '@/components/GasMilageCalculator'
+import GasMileageCalculator from '@/components/GasMileageCalculator'
 import SubscriptionCTA from '@/components/SubscriptionCTA.vue'
 
 export default {
@@ -9,16 +9,16 @@ export default {
   setup() {},
   components: {
     AppBanner,
-    GasMilageCalculator,
+    GasMileageCalculator,
     SubscriptionCTA,
   },
   data() {
     return {
-      isMilageCalculatorAvailable: false
+      isMileageCalculatorAvailable: false
     }
   },
   mounted() {
-    fetch("https://api.npms.io/v2/invalid-url")
+    fetch("http://localhost:3000/api/travel/mileage")
       .then(async response => {
         const data = await response.json();
 
@@ -29,12 +29,12 @@ export default {
           return Promise.reject(error);
         }
 
-        this.isMilageCalculatorAvailable = true;
+        this.isMileageCalculatorAvailable = data;
       })
       .catch(error => {
         this.errorMessage = error;
         console.error("There was an error!", error);
-        this.isMilageCalculatorAvailable = false;
+        this.isMileageCalculatorAvailable = false;
       });
   }
 }
@@ -46,8 +46,8 @@ export default {
     <AppBanner />
 
     <div class="flex justify-center items-center">
-      <div class="container" v-if="isMilageCalculatorAvailable">
-      <GasMilageCalculator />
+      <div class="container" v-if="isMileageCalculatorAvailable">
+      <GasMileageCalculator />
       </div>
       <div v-else class="container">
         <SubscriptionCTA />
