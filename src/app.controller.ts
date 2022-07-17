@@ -19,8 +19,10 @@ export class AppController {
     const canShowMileageFeature = await this.configCatClient.getValueAsync("canshowmileagefeature", false)
 
     if (canShowMileageFeature) {
+      // When true is returned to the frontend, the Gas Mileage feature is rendered
       return true
     } else {
+      // When false is returned to the frontend, the Gas Mileage feature is not rendered. Instead, the subscription form will be rendered.
       return false
     }
   }
