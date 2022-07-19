@@ -1,31 +1,36 @@
-Read.me template:
+## NestJS Sample application
 
-# Sample application name and/or blogpost title
+### About
 
-#### (Optional) In case the blog post is already published, please add: [Read the blog post here](https://configcat.com/blog/)
+This is a fictional auto dealership website illustrating how to use feature flags in NestJS. Since Nest is considered a server-side framework, the frontend components were developed using Vue.js. The complete frontend can be found in the **client** folder.
 
-A few words about the contents of the repository. Whats is this application about, what does it demonstrate? Add a backlink to https://configcat.com
+Here's a short breakdown of the app:
 
-## Build & Run
+On the home page of the website, just under the banner. I've added:
 
-Instructions on how to build and run the application locally. A student or junior developer should be able to run the application.
-- Prerequisites
-- Steps, commands to run
+- **A newsletter subscription form** - Let's consider this to be a pre-existing component of the site.
+- **A fuel mileage calculator** - The new feature to be rolled out.
 
-## Learn more
+### Prerequisites for running the app
 
-Useful links to technical resources.
+- Node version 16 or higher
 
-Example:
-- Next.js Documentation - learn about Next.js features and API.
-- Learn Next.js - an interactive Next.js tutorial.
+#### How to run the app
 
-[**ConfigCat**](https://configcat.com) also supports many other frameworks and languages. Check out the full list of supported SDKs [here](https://configcat.com/docs/sdk-reference/overview/)
+1. Open a terminal in the root of this repo and run the following command to install the **npm packages**.
 
-Keep up with ConfigCat on [Twitter](https://twitter.com/configcat), [Facebook](https://www.facebook.com/configcat), [LinkedIn](https://www.linkedin.com/company/configcat/), and [GitHub](https://github.com/configcat).
+```bash
+npm install
+```
 
-## Author
-[Your Name](https://github.com/your_name)
+2. Start the app by running the following command then access it on [http://localhost:3000/](http://localhost:3000/).
 
-## Contributions
-Contributions are welcome!
+```bash
+npm run start
+```
+
+You can also explore other code samples for various languages, frameworks, and topics here in the [ConfigCat labs](https://github.com/configcat-labs) on GitHub.
+
+## Conclusion
+
+For more awesome content, keep up with ConfigCat on [Twitter](https://twitter.com/configcat), [Facebook](https://www.facebook.com/configcat), [LinkedIn](https://www.linkedin.com/company/configcat/), and [GitHub](https://github.com/configcat).
