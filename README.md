@@ -1,4 +1,4 @@
-## NestJS Sample application
+## NestJS sample application
 
 ### About
 
