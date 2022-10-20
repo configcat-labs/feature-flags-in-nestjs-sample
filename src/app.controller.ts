@@ -8,15 +8,14 @@ export class AppController {
   constructor(
     private readonly appService: AppService,
     private configCatService: ConfigCatService,
-  ) {
-    configCatService.init();
-  }
+  ) {}
 
   @Get('mileage')
   async getMileageFeature(): Promise<boolean> {
     // Create a variable to store the state of the feature flag from ConfigCat.
     // This variable will be automatically updated every 60 seconds by default.
-    const canShowMileageFeature = this.configCatService.getFeatureStatus();
+    const canShowMileageFeature =
+      await this.configCatService.getFeatureStatus();
 
     if (canShowMileageFeature) {
       // When true is returned to the frontend, the Gas Mileage feature is rendered
