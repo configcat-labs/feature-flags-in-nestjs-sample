@@ -12,8 +12,8 @@ export class AppController {
 
   @Get('mileage')
   async getMileageFeature(): Promise<boolean> {
-    // Create a variable to store the state of the feature flag from ConfigCat.
-    // This variable will be automatically updated every 60 seconds by default.
+    // Create a constant to store the state of the feature flag returned by the custom ConfigCat service.
+    // This will be automatically updated every 60 seconds by default.
     const canShowMileageFeature =
       await this.configCatService.getFeatureStatus();
 
