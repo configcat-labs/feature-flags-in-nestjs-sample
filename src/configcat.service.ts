@@ -10,11 +10,6 @@ export class ConfigCatService {
   );
 
   getFeatureStatus() {
-    const canShowMileageFeature = this.configcatclient
-      .getValueAsync('canshowmileagefeature', false)
-      .then((value) => {
-        return value;
-      });
-    return canShowMileageFeature;
+    return this.configcatclient.getValueAsync('canshowmileagefeature', false);
   }
 }
