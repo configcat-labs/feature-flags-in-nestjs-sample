@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
-// Import the ConfigCat JavaScript SSR client SDK
-import * as configcat from 'configcat-js-ssr';
+// Import the ConfigCat client SDK
+const configcat = require("configcat-node");
 
 @Injectable()
 export class ConfigCatService {
