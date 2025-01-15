@@ -1,0 +1,124 @@
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Automobile Landing Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .banner {
+      background-image: url('/banner-image.jpg');
+      background-position: center;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .banner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .banner h1,
+    .banner p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .calculator {
+      margin-top: 20px;
+    }
+
+    .calculator input,
+    .calculator select {
+      margin: 5px 0;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .calculator button {
+      padding: 10px;
+      width: 100%;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .calculator button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='banner'>
+    <h1>Welcome to Our Automobile Landing Page</h1>
+    <p>Find your dream car with us</p>
+  </div>
+
+  <div class='container'>
+    <div class='mileage-calculator'>
+      <h2>Fuel Per Mileage Calculator</h2>
+      <div class='calculator'>
+        <label for='carModel'>Car Model:</label>
+        <select id='carModel'>
+          <option value='sedan'>Sedan</option>
+          <option value='suv'>SUV</option>
+          <option value='truck'>Truck</option>
+        </select>
+        <label for='distance'>Distance (miles):</label>
+        <input type='number' id='distance' placeholder='Enter distance in miles' />
+        <label for='fuel'>Fuel Used (gallons):</label>
+        <input type='number' id='fuel' placeholder='Enter fuel used in gallons' />
+        <button onclick='calculateMileage()'>Calculate</button>
+        <p id='result'></p>
+      </div>
+    </div>
+    <div>
+      <p>
+        Fuel Per Mileage Calculator is coming soon. Stay tuned!
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function calculateMileage() {
+      const carModel = document.getElementById('carModel').value; 
+      const distance = parseFloat(document.getElementById('distance').value); 
+          const fuel = parseFloat(document.getElementById('fuel').value); 
+          if (!isNaN(distance) && !isNaN(fuel) && fuel > 0) {
+            let mileage = distance / fuel;
+            switch (carModel) {
+            case 'sedan': mileage *= 1.0; 
+            break; 
+            case 'truck': mileage *= 0.6; 
+            break;
+        }
+        document.getElementById('result').innerText = `Your mileage is ${mileage.toFixed(2)} miles per gallon.`;
+      } else {
+        document.getElementById('result').innerText = 'Please enter valid numbers for both distance and fuel used.'; } }
+  </script>
+</body>
+
+</html>
