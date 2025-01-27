@@ -1,12 +1,14 @@
 import { Injectable } from '@nestjs/common';
+import { Request } from 'express';
 
 @Injectable()
 export class AppService {
-  getViewName(): string {
-    // Implement the logic to return the name of the view file
-    return 'index';
-  }
-  getHello(): string {
-    return 'Hello World!';
+  private readonly urlToViewMap: Record<string, string> = {
+    '/': 'index',
+    '/about': 'about',
+  };
+
+  getViewName(req: Request): string {
+    return this.urlToViewMap[req.url] || 'not-found';
   }
 }
