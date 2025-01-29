@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import * as configcat from 'configcat-node';
-import { ConfigService } from 'config/config.service';
+import { ConfigService } from 'src/config/config.service';
 
 @Injectable()
 export class ConfigCatService {
