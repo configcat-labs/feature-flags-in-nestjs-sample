@@ -1,15 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import * as configcat from 'configcat-node';
-// import
+import { ConfigService } from 'config/config.service';
 
 @Injectable()
 export class ConfigCatService {
   private readonly configCatClient: any;
 
-  constructor() {
-    this.configCatClient = configcat.getClient(
-      'PKDVCLf-Hq-h-kCzMp-L7Q/HhOWfwVtZ0mb30i9wi17GQ',
-    );
+  constructor(configService: ConfigService) {
+    const configCatSdkKey = configService.get('CONFIGCAT_SDK_KEY');
+    this.configCatClient = configcat.getClient(configCatSdkKey);
   }
 
   getValue(key: string, defaultValue: any): any {
