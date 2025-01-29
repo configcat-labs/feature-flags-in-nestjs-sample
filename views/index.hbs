@@ -78,7 +78,7 @@
   </div>
 
   <div class='container'>
-    {{!-- The new feature --}}
+    {{#if isMyFeatureFlagEnabled }}
     <div class='mileage-calculator'>
       <h2>Fuel Per Mileage Calculator</h2>
       <div class='calculator'>
@@ -96,12 +96,11 @@
         <p id='result'></p>
       </div>
     </div>
-    {{!-- The else block to render when the feature is toggles off --}}
-    <div>
+    {{else}}
       <p>
         Fuel Per Mileage Calculator is coming soon. Stay tuned!
       </p>
-    </div>
+    {{/if}}
   </div>
 
   <script>

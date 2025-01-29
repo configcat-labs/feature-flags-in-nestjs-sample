@@ -12,6 +12,6 @@ export class ConfigCatService {
   }
 
   getValue(key: string, defaultValue: any): any {
-    return this.configCatClient.getValue(key, defaultValue);
+    return this.configCatClient.getValueAsync(key, defaultValue);
   }
 }
