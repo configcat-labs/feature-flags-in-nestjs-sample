@@ -15,13 +15,11 @@ export class AppController {
     const viewName = this.appService.getViewName(req);
 
     // Get the value of the feature flag
-    const isMyFeatureFlagEnabled = await this.configCatService.getValue(
-      'myFeatureFlag',
-      false,
-    );
+    const isMileageCalculatorFeatureEnabled =
+      await this.configCatService.getValue('mileageCalculatorFeature', false);
 
     res.render(viewName, {
-      isMyFeatureFlagEnabled,
+      isMileageCalculatorFeatureEnabled, // Pass the value to the view
     });
   }
 }
