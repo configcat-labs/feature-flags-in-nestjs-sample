@@ -1,15 +1,15 @@
 # How to Integrate Feature Flags in NestJS
 
-**[Read the blog post here](https://configcat.com/blog/2022/08/19/how-to-use-feature-flags-in-nestjs/)**
+**[Read the blog post here](https://configcat.com/blog/how-to-integrate-feature-flags-in-nestjs/)**
 
-This repository contains a sample NestJS application that demonstrates how to integrate feature flags using ConfigCat.
+A sample app demonstrating how to integrate ConfigCat feature flags into a NestJS application.
 
 ## Build & Run
 
 ### Prerequisites
 
 - A code editor, e.g., [Visual Studio Code](https://code.visualstudio.com/).
-- [Node.js](https://nodejs.org/en) version 16 or higher installed on your machine.
+- [Node.js](https://nodejs.org/en) version 22 or higher installed on your machine.
 
 ### Run the app
 
@@ -38,7 +38,7 @@ Useful links to technical resources.
 
 - [**ConfigCat**](https://configcat.com) - Feature flag and configuration management service.
 - [**NestJS**](https://nestjs.com) - A progressive Node.js framework for building efficient, reliable, and scalable server-side applications.
-- [**ConfigCat SDK for Node.js**](https://configcat.com/docs/sdk-reference/nodejs/) - The official ConfigCat SDK for Node.js.
+- [**ConfigCat SDK for Node.js**](https://configcat.com/docs/sdk-reference/js/node/) - The official ConfigCat SDK for Node.js.
 
 [**ConfigCat**](https://configcat.com) supports many other frameworks and languages. Check out the full list of supported SDKs [here](https://configcat.com/docs/sdk-reference/overview/).
 
