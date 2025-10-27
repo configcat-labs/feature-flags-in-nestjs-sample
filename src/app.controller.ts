@@ -1,6 +1,6 @@
 import { Controller, Get, Res, Req } from '@nestjs/common';
 import { AppService } from './app.service';
-import { Response, Request } from 'express';
+import type { Response, Request } from 'express';
 import { ConfigCatService } from './configcat.service';
 
 @Controller()

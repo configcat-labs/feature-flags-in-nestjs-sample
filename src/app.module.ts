@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ConfigModule } from './config/config.module';
 import { ConfigCatService } from './configcat.service';
 
 @Module({
-  imports: [ConfigModule.register({ folder: './config' })],
+  imports: [],
   controllers: [AppController],
   providers: [AppService, ConfigCatService],
 })

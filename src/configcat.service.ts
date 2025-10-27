@@ -1,17 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import * as configcat from '@configcat/sdk';
-import { ConfigService } from 'src/config/config.service';
+import type { IConfigCatClient } from '@configcat/sdk';
 
 @Injectable()
 export class ConfigCatService {
-  private readonly configCatClient: any;
+  private readonly configCatClient: IConfigCatClient;
 
-  constructor(configService: ConfigService) {
-    const configCatSdkKey = configService.get('CONFIGCAT_SDK_KEY');
-    this.configCatClient = configcat.getClient(configCatSdkKey);
+  constructor() {
+    this.configCatClient = configcat.getClient('YOUR-CONFIGCAT-SDK-KEY');
   }
 
-  getValue(key: string, defaultValue: any): any {
+  async getValue(key: string, defaultValue: boolean): Promise<boolean> {
     return this.configCatClient.getValueAsync(key, defaultValue);
   }
 }
