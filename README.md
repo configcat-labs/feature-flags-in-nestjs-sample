@@ -26,7 +26,9 @@ cd feature-flags-in-nestjs-sample
 npm install
 ```
 
-3. Start the application.
+3. Add your [ConfigCat SDK Key](https://app.configcat.com/sdkkey) to the `src/configcat.service.ts` file, and then add your feature flag key to the `app.controller.ts` file.
+
+4. Start the application.
 
 ```bash
 npm run start:dev
