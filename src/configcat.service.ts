@@ -1,15 +1,16 @@
 import { Injectable } from '@nestjs/common';
-
-// Import the ConfigCat client SDK
-const configcat = require("configcat-node");
+import * as configcat from '@configcat/sdk';
+import type { IConfigCatClient } from '@configcat/sdk';
 
 @Injectable()
 export class ConfigCatService {
-  private readonly configcatclient = configcat.createClient(
-    'YOUR_CONFIGCAT_SDK_KEY',
-  );
+  private readonly configCatClient: IConfigCatClient;
 
-  getFeatureStatus() {
-    return this.configcatclient.getValueAsync('canshowmileagefeature', false);
+  constructor() {
+    this.configCatClient = configcat.getClient('YOUR-CONFIGCAT-SDK-KEY');
+  }
+
+  async getValue(key: string, defaultValue: boolean): Promise<boolean> {
+    return this.configCatClient.getValueAsync(key, defaultValue);
   }
 }

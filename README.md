@@ -1,59 +1,57 @@
-## NestJS sample application
+# How to Integrate Feature Flags in NestJS
 
-### About
+**[Read the blog post here](https://configcat.com/blog/how-to-integrate-feature-flags-in-nestjs/)**
 
-This is a fictional auto dealership website illustrating how to use feature flags in NestJS. Since Nest is considered a server-side framework, the frontend components were developed using Vue.js. The complete frontend can be found in the **client** folder.
-
-Here's a short breakdown of the app:
-
-On the home page of the website, just under the banner. I've added:
-
-- **A newsletter subscription form** - Let's consider this to be a pre-existing component of the site.
-- **A fuel mileage calculator** - The new feature to be rolled out.
+A sample app demonstrating how to integrate ConfigCat feature flags into a NestJS application.
 
 ## Build & Run
 
 ### Prerequisites
-- Node version 16 or higher
 
-### Instructions for running the app
+- A code editor, e.g., [Visual Studio Code](https://code.visualstudio.com/).
+- [Node.js](https://nodejs.org/en) version 22 or higher installed on your machine.
 
-1. Open a terminal in the root of this repo and run the following command to install the **npm packages**.
+### Run the app
 
-```sh
+1. Clone the repository.
+
+```bash
+git clone git@github.com:configcat-labs/feature-flags-in-nestjs-sample.git
+```
+
+2. Navigate to the project directory and install the dependencies.
+
+```bash
+cd feature-flags-in-nestjs-sample
 npm install
 ```
 
-2. Build the Vue frontend:
+3. Add your [ConfigCat SDK Key](https://app.configcat.com/sdkkey) to the `src/configcat.service.ts` file, and then add your feature flag key to the `app.controller.ts` file.
 
-```sh
-cd client
+4. Start the application.
 
-npm install
-
-npm run build
-```
-
-3. In the root directory, start the server by running the following command then access it on [http://localhost:3000/](http://localhost:3000/).
-
-```sh
-npm run start
+```bash
+npm run start:dev
 ```
 
 ## Learn more
 
 Useful links to technical resources.
 
-- [Nest.js Documentation](https://docs.nestjs.com/) - learn about Nest.js features and its API.
+- [**ConfigCat**](https://configcat.com) - Feature flag and configuration management service.
+- [**NestJS**](https://nestjs.com) - A progressive Node.js framework for building efficient, reliable, and scalable server-side applications.
+- [**ConfigCat SDK for Node.js**](https://configcat.com/docs/sdk-reference/js/node/) - The official ConfigCat SDK for Node.js.
 
-[**ConfigCat**](https://configcat.com) also supports many other frameworks and languages. Check out the full list of supported SDKs [here](https://configcat.com/docs/sdk-reference/overview/).
+[**ConfigCat**](https://configcat.com) supports many other frameworks and languages. Check out the full list of supported SDKs [here](https://configcat.com/docs/sdk-reference/overview/).
 
-You can also explore other code samples for various languages, frameworks, and topics here in the [ConfigCat labs](https://github.com/configcat-labs) on GitHub.
+You can also explore other code samples for various languages, frameworks, and topics in [ConfigCat labs](https://github.com/configcat-labs) on GitHub.
 
-Keep up with ConfigCat on [Twitter](https://twitter.com/configcat), [Facebook](https://www.facebook.com/configcat), [LinkedIn](https://www.linkedin.com/company/configcat/), and [GitHub](https://github.com/configcat).
+Keep up with ConfigCat on [X](https://x.com/configcat), [Facebook](https://www.facebook.com/configcat), [LinkedIn](https://www.linkedin.com/company/configcat/), and [GitHub](https://github.com/configcat).
 
 ## Author
+
 [Chavez Harris](https://github.com/codedbychavez)
 
 ## Contributions
+
 Contributions are welcome!
